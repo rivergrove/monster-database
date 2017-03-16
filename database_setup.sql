@@ -13,14 +13,16 @@
 -- dragon warrior monsters breeding chart
 create table breeding(
 	offspring varchar(50),
-    p1 varchar(50),
-    p2 varchar(50)
+    	p1 varchar(50),
+        p2 varchar(50)
 );
 
 -- copy data to breeding table
 set client_encoding to 'Windows-1251';
+
 copy breeding
 	from 'directory/dragon_warrior_monsters.csv' delimiter ',' csv header;
+	
 set client_encoding to 'UTF8';
 
 -- table for raw moves data
@@ -39,8 +41,10 @@ create table dwm_moves(
 
 -- copy raw data to moves table
 set client_encoding to 'Windows-1251';
+
 copy dwm_moves
 	from 'directory/dwm_monster_and_move_list.csv' delimiter ',' csv header;
+	
 set client_encoding to 'UTF8';
 
 -- ***** clean data *****
